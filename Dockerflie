@@ -1,10 +1,6 @@
 # 设置基础镜像,基于node:14.0.0版本
 FROM node:16.20-slim AS frontend-builder
 
-ENV NPM_CACHE_LOCATION=/root/.npm \
-  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-  YARN_CACHE_FOLDER=/root/.yarn
-
 # 配置环境变量
 ENV NODE_ENV production
 
@@ -17,8 +13,7 @@ WORKDIR /usr/src/app
 # 拷贝所有文件到工作目录
 COPY . /usr/src/app
 
-RUN --mount=type=cache,target=$YARN_CACHE_FOLDER \
-  npm install && npm run build:prod
+RUN npm install && npm run build:prod
 
 
 FROM nginx:alpine
