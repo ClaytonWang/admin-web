@@ -10,12 +10,12 @@ RUN mkdir -p /usr/src/app
 # 指定工作目录
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/package.json
+# 拷贝所有文件到工作目录
+COPY ./ /usr/src/app
+
+RUN ls -a
 
 RUN npm install
-
-# 拷贝所有文件到工作目录
-COPY . /usr/src/app
 
 RUN npm run build:prod
 
