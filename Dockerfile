@@ -10,15 +10,12 @@ RUN mkdir -p /app
 # 指定工作目录
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
-
 # 拷贝所有文件到工作目录
 COPY . .
 
 RUN ls -a
 
-RUN npm run build:prod
+RUN yarn && yarn run build:prod
 
 
 FROM nginx:alpine
