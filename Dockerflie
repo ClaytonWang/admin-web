@@ -13,7 +13,7 @@ WORKDIR /usr/src/app
 # 拷贝所有文件到工作目录
 COPY . /usr/src/app
 
-RUN npm install && npm run build:prod
+RUN npm install
 
 
 # FROM nginx:alpine
