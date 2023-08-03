@@ -1,5 +1,5 @@
 # 设置基础镜像,基于node:14.0.0版本
-FROM node:lts-alpine as build-stage
+FROM node:16.20-slim as build-stage
 
 # 配置环境变量
 ENV NODE_ENV production
