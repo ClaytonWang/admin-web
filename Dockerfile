@@ -13,8 +13,7 @@ WORKDIR /usr/src/app
 # 拷贝所有文件到工作目录
 COPY . /usr/src/app
 
-RUN npm install -g @vue/cli-service
-RUN npm install
+RUN npm install -g
 RUN npm run build:prod
 
 
