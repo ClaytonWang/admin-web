@@ -14,7 +14,8 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 RUN npm install -g @vue/cli-service
-RUN npm install && npm run build:prod
+RUN npm install
+RUN npm run build:prod
 
 
 FROM nginx:alpine
