@@ -33,21 +33,21 @@ Object.keys(filters).forEach(key => {
 
 Vue.config.productionTip = false
 
-Sentry.init({
-  Vue,
-  dsn: 'http://656d700f0bd944c8bece4753f916b80d@sentry.myjerry.cn/3',
-  integrations: [
-    new Integrations.BrowserTracing({
-      routingInstrumentation: Sentry.vueRouterInstrumentation(router),
-      tracingOrigins: ['localhost', 'my-site-url.com', /^\//]
-    })
-  ],
-  logErrors: true,
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0
-})
+// Sentry.init({
+//   Vue,
+//   dsn: 'http://656d700f0bd944c8bece4753f916b80d@sentry.myjerry.cn/3',
+//   integrations: [
+//     new Integrations.BrowserTracing({
+//       routingInstrumentation: Sentry.vueRouterInstrumentation(router),
+//       tracingOrigins: ['localhost', 'my-site-url.com', /^\//]
+//     })
+//   ],
+//   logErrors: true,
+//   // Set tracesSampleRate to 1.0 to capture 100%
+//   // of transactions for performance monitoring.
+//   // We recommend adjusting this value in production
+//   tracesSampleRate: 1.0
+// })
 
 new Vue({
   el: '#app',

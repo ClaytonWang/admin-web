@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const SentryPlugin = require('@sentry/webpack-plugin')
+// const SentryPlugin = require('@sentry/webpack-plugin')
 const defaultSettings = require('./src/settings.js')
 
 function resolve(dir) {
@@ -97,7 +97,7 @@ module.exports = {
             .plugin('ScriptExtHtmlWebpackPlugin')
             .after('html')
             .use('script-ext-html-webpack-plugin', [{
-            // `runtime` must same as runtimeChunk name. default is `runtime`
+              // `runtime` must same as runtimeChunk name. default is `runtime`
               inline: /runtime\..*\.js$/
             }])
             .end()
@@ -130,17 +130,17 @@ module.exports = {
         }
       )
 
-    if (process.env.NODE_ENV === 'production') {
-      config.plugin('sentry').use(SentryPlugin, [{
-        // 指定忽略文件配置
-        ignoreFile: ['node_modules', '.gitignore'],
-        // 指定上传目录
-        include: './dist',
-        // 指定sentry上传配置
-        configFile: './.sentryclirc',
-        // 保持与publicPath相符
-        urlPrefix: '/'
-      }])
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   config.plugin('sentry').use(SentryPlugin, [{
+    //     // 指定忽略文件配置
+    //     ignoreFile: ['node_modules', '.gitignore'],
+    //     // 指定上传目录
+    //     include: './dist',
+    //     // 指定sentry上传配置
+    //     configFile: './.sentryclirc',
+    //     // 保持与publicPath相符
+    //     urlPrefix: '/'
+    //   }])
+    // }
   }
 }
