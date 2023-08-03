@@ -13,14 +13,14 @@ WORKDIR /usr/src/app
 # 拷贝所有文件到工作目录
 COPY . /usr/src/app
 
-RUN npm install
+RUN npm install && npm run build:prod
 
 
-# FROM nginx:alpine
+FROM nginx:alpine
 
-# COPY --from=frontend-builder /usr/src/app/dist /usr/share/nginx/html
+COPY --from=frontend-builder /usr/src/app/dist /usr/share/nginx/html
 
-# COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-# COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
-# ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
