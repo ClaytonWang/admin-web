@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '任务调度与动态权限',
+  title: '订单系统',
 
   /**
    * @type {boolean} true | false

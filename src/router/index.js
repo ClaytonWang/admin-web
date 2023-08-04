@@ -42,7 +42,6 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
@@ -53,7 +52,18 @@ export const constantRoutes = [
       component: () => import('@/views/dashboard/index'),
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
+  },
+  {
+    path: '/order',
+    component: Layout,
+    children: [{
+      path: 'order',
+      name: 'Order',
+      component: () => import('@/views/order/index'),
+      meta: { title: '订单管理', icon: 'table' }
+    }]
   }
+
 ]
 
 const createRouter = () => new Router({
