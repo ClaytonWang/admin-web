@@ -13,7 +13,8 @@
       <el-table-column align="center" prop="status" label="状态">
         <template slot-scope="{ row }">
           <el-tag v-if="row.is_release == 1" type="success">完成</el-tag>
-          <el-tag v-else type="warning">锁号中</el-tag>
+          <el-tag v-if="row.is_release == -1" type="success">锁号中</el-tag>
+          <el-tag v-else type="warning">已下单</el-tag>
         </template>
       </el-table-column>
       <el-table-column prop="detail_json" label="客户姓名" :formatter="(row)=>customFormatter(row.detail_json,'username')" />
