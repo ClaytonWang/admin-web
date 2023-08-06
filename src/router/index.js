@@ -49,20 +49,20 @@ export const constantRoutes = [
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
-  },
-  {
-    path: '/order',
-    component: Layout,
-    children: [{
-      path: 'order',
-      name: 'Order',
       component: () => import('@/views/order/index'),
-      meta: { title: '订单管理', icon: 'table' }
+      meta: { title: '订单管理', icon: 'dashboard' }
     }]
   }
+  // {
+  //   path: '/order',
+  //   component: Layout,
+  //   children: [{
+  //     path: 'order',
+  //     name: 'Order',
+  //     component: () => import('@/views/order/index'),
+  //     meta: { title: '订单管理', icon: 'table' }
+  //   }]
+  // }
 
 ]
 
