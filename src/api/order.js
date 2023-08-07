@@ -12,3 +12,10 @@ export function orderList(params) {
   })
 }
 
+export function orderDelete(data) {
+  return request({
+    url: '/order/delete',
+    method: 'post',
+    data
+  })
+}
